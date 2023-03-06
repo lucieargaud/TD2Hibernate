@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,6 +28,9 @@ public class Paiement {
 	private double montant;
 	private LocalDate date;
 	
+	@OneToOne
+	@JoinColumn(name="idCommande")
+	private Commande commande;
 	
 	
 	public Paiement() {

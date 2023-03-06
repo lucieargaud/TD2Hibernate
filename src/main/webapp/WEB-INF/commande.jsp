@@ -31,15 +31,15 @@
 				client</label> <input type="text" id="typeReglement" class="form-control"
 				name="idUtilisateur">
 		</div>
-
-		<div class="form-check"> Type de règlement
-			<input class="form-check-input" type="radio" name="CB"
-				id="CB"> <label class="form-check-label"
+<p>Type de règlement</p>
+		<div class="form-check"> 
+			<input class="form-check-input" type="radio" name="paiement"
+				id="CB" value="CB"> <label class="form-check-label"
 				for="CB"> Carte Bancaire </label>
 		</div>
 		<div class="form-check">
-			<input class="form-check-input" type="radio" name="Paypal"
-				id="Paypal"> <label
+			<input class="form-check-input" type="radio" name="paiement"
+				id="Paypal" value="Paypal"> <label
 				class="form-check-label" for="Paypal"> Paypal </label>
 		</div>
 

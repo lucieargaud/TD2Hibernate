@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -25,6 +26,9 @@ public class Commande {
 //	joinColumns = @JoinColumn(name="idCommande"),
 //	inverseJoinColumns = @JoinColumn(name="idUtilisateur"))
 	private Utilisateur utilisateur;
+	
+	@OneToOne(mappedBy = "commande")
+	private Paiement paiement;
 
 	public Commande() {
 		super();

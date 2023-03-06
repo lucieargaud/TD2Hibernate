@@ -58,22 +58,21 @@ public class CommandeServlet extends HttpServlet {
 			com1.setUtilisateur(u1);
 
 			Paiement p1= null;
-//			if(request.getParameter("reglement").equals("CB"))
-//			{
+			if(request.getParameter("paiement").equals("CB"))
+			{
 				p1=new CB(LocalDate.parse(request.getParameter("date")), 
 						Long.valueOf(request.getParameter("numeroCarte")), 
 						request.getParameter("dateExpiration"));
-//			}
-//			else if(request.getParameter("reglement").equals("Paypal"))
-//			{
-				Paiement p2=new Paypal(LocalDate.parse(request.getParameter("date")), 
+			}
+			else if(request.getParameter("paiement").equals("Paypal"))
+			{
+				p1=new Paypal(LocalDate.parse(request.getParameter("date")), 
 						Integer.valueOf(request.getParameter("numeroCompte")));
-//			}
-			p1.setMontant(120);
-			p2.setMontant(120);
-	        s.save(com1);
+			}
+			
+		    s.save(com1);
 	        s.save(p1);
-	        s.save(p2);
+
 	        
 	        s.getTransaction().commit();
 	        log.info("Commande enregistrée");
