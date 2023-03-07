@@ -19,7 +19,7 @@ public class Article {
 	private double prix;
 	
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(name="idCommande", nullable = false)
 	private Commande commande;
 	
 	public Article() {

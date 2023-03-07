@@ -2,6 +2,7 @@ package com.inti.Model;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.DiscriminatorValue;
@@ -28,9 +29,9 @@ public class Paiement {
 	private double montant;
 	private LocalDate date;
 	
-	@OneToOne
-	@JoinColumn(name="idCommande")
-	private Commande commande;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="idCommande") // Mieux dans l'autre sens parce que le paiement est une info supplémentaire
+	private Commande commande;	   // Commande est l'information principale => On met dans commande
 	
 	
 	public Paiement() {
@@ -85,6 +86,13 @@ public class Paiement {
 	}
 
 
+	public Commande getCommande() {
+		return commande;
+	}
+
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
 
 	@Override
 	public String toString() {

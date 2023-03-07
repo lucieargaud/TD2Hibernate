@@ -17,8 +17,6 @@ import com.inti.Model.CB;
 import com.inti.Model.Commande;
 import com.inti.Model.Paiement;
 import com.inti.Model.Paypal;
-import com.inti.Model.UAbonne;
-import com.inti.Model.UVip;
 import com.inti.Model.Utilisateur;
 import com.inti.Util.HibernateUtil;
 
@@ -70,7 +68,7 @@ public class CommandeServlet extends HttpServlet {
 						Integer.valueOf(request.getParameter("numeroCompte")));
 			}
 			
-		    s.save(com1);
+			p1.setCommande(com1);
 	        s.save(p1);
 
 	        
